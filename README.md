@@ -1,26 +1,23 @@
-## GitHub Link
+# GitHub Icon Link
 
-Displays GitHub link on the **Plugins** page given there is a `GitHub Plugin URI`
-[plugin header](github-link.php#L11).
+Displays GitHub icon link on the **Plugins** page for a given `GitHub Plugin URI` plugin header.
 
-### GitHub headers
+![banner](assets/banner-772x250.png)
 
-- `GitHub Plugin URI` shown as a normal GitHub icon ![GitHub icon](icon/GitHub-Mark-32px.png)
+---
 
-### GitLab headers
+## Supported Icon Headers
 
-- `GitLab Plugin URI` shown as a normal GitLab icon ![GitLab icon](icon/GitLab-Mark-32px.png)
+![GitHub icon](icon/GitHub-Mark-32px.png) `GitHub Plugin URI` shown as a normal GitHub icon
 
-### Bitbucket headers
+![GitLab icon](icon/GitLab-Mark-32px.png) `GitLab Plugin URI` shown as a normal GitLab icon
 
-- `Bitbucket Plugin URI` shown as a Bitbucket logo ![Bitbucket logo](icon/bitbucket_32_darkblue_atlassian.png)
+![Bitbucket logo](icon/bitbucket_32_darkblue_atlassian.png) `Bitbucket Plugin URI` shown as a Bitbucket logo
 
-### WordPress.org headers
+![WordPress logo](icon/wordpress-logo-32.png) `Plugin URI` shown as a WordPress logo (when the plugin is on WordPress.org)
 
-- `Plugin URI` shown as a WordPress logo when the plugin is on WordPress.org ![https://s.w.org/about/images/logos/wordpress-logo-32-blue.png](icon/wordpress-logo-32.png)
+---
 
-### Related Information
+### Related info
 
-These plugin headers enable automatic updates to your GitHub or Bitbucket hosted WordPress
-plugins and themes using the [GitHub Updater plugin](https://github.com/afragen/github-updater).
-GitHub Updater is not found on WordPress.org.
+Using the [GitHub Updater](https://github.com/afragen/github-updater) plugin, these additional headers enable automatic updates of plugins and themes from any of your favourites version control systems (GitHub, GitLab, Bitbucket) and which are not typically hosted on the [WordPress.org](https://wordpress.org/) directory.

@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name:       GitHub Link
+Plugin Name:       GitHub Icon Link
 Version:           1.0.0
 Plugin URI:        https://github.com/szepeviktor/github-link
 Description:       Displays GitHub icon link on the Plugins page for a given <code>GitHub Plugin URI</code> plugin header.
