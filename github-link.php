@@ -49,6 +49,8 @@ class GitHub_Link {
           add_filter( "network_admin_plugin_action_links_{$plugin_slug}", [ &$this, 'plugin_action_links' ], 1000, 4 );
         }
 
+				add_filter( 'github_updater_set_options', [ &$this, 'github_updater_set_options' ], 15, 0 );
+
         load_plugin_textdomain( 'github-link', false, dirname( __FILE__ ) . '/languages' );
     }
 
@@ -80,9 +82,7 @@ class GitHub_Link {
           return $actions;
         }
 
-        $link_template = '<a href="%s" title="%s" target="_blank" style="color: #32373c;"><img src="%s" style="width: 16px; height: 16px; margin-top: 4px; padding-right: 4px; float: none;" height="16" width="16" alt="%s" />%s</a>';
-
-        $branch = ! empty( $plugin_data['branch'] ) ? $plugin_data['branch'] : 'master';
+        $link_template = '<a href="%s" title="%s" target="_blank" style="color: #32373c;"><img src="%s" style="width: 16px; height: 16px; margin-top: 4px; padding-right: 4px; float: none;" height="16" width="16" alt="%s" /></a>';
 
         foreach ( $this->extra_plugin_headers as $header ) {
           if ( ! empty( $plugin_data[ $header ] ) ) {
@@ -93,8 +93,7 @@ class GitHub_Link {
                 $plugin_data[ $header ],
                 __( 'Visit ' . $githost_name . ' repository', 'github-link' ),
                 plugins_url( 'icon/' . $githost_name . '-Mark-32px.png', __FILE__ ),
-                $githost_name,
-                $branch ? '/' . $branch : ''
+                $githost_name
               ),
             ];
             $actions      = $new_action + $actions;
@@ -162,6 +161,19 @@ class GitHub_Link {
         }
         return false;
     }
+
+	/**
+	 * Callback function used to override GitHub Updater default options.
+	 *
+	 * @link https://github.com/afragen/github-updater/wiki/Developer-Hooks
+	 *
+	 * @return array
+	 */
+		function github_updater_set_options() {
+			return [
+				'branch_switch'    => '1'
+			];
+		}
 
 }
 
